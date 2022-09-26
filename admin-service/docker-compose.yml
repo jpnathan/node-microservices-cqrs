@@ -1,0 +1,38 @@
+version: '2'
+services:
+    # test-web-install:
+    #     image: example-nodejs:latest
+    #     working_dir: /home/app
+    #     volumes:
+    #     - ./:/home/app
+    #     command: sh -c 'nodemon'
+    #     environment:
+    #     - NODE_ENV=development
+    #     - DB_HOST= mysql 
+    #     - DB_PORT=3036
+    #     - DB_PASSWORD=root
+    #     - DB_USER=root
+    #     - DB_DATABASE=root
+    #     ports:
+    #     - "3000:3000"
+    #     network_mode: "host"
+  mysql:
+    container_name: mysql-image
+    restart: always
+    image: mysql:latest
+    environment:
+        MYSQL_ROOT_PASSWORD: 'my-secret-pw'
+        MYSQL_ROOT_HOST: '%'
+        MYSQL_DATABASE: 'db_admin'
+    volumes:
+    - ./data:/var/lib/mysql
+    ports:
+    - "3036:3306"
+  amqp:
+    container_name: amqp-image
+    restart: always
+    image: rabbitmq:3-management
+    environment:
+        HOSTNAME: 'my-rabbit'
+    ports:
+    - "15671:15672"

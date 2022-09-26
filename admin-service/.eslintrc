@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "prettier",
+      "security"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:security/recommended",
+      "prettier"
+    ],
+    "rules": {
+        "array-bracket-spacing": [2, "always"],
+        "no-extra-parens": 2,
+        "no-var": 2,
+        "object-curly-spacing": [2, "always"],
+        "prefer-template": 2,
+        "quote-props": 0,
+        "no-unused-vars": 2,
+        "quotes": [ 2, "single" ],
+        "template-curly-spacing": [ 0, "never" ],
+        "prefer-const": 2,
+        "constructor-super": 2,
+        "no-console": 2,
+        "indent": [ 2, "tab" ],
+        "experimentalDecorators": [2, "always"]
+    }
+  }
